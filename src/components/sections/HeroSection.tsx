@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Network } from "lucide-react";
+import HeroSplineScene from "@/components/spline/HeroSplineScene";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  splineUrl?: string;
+}
+
+export default function HeroSection({ splineUrl }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 overflow-hidden bg-surface-container-lowest">
       {/* Abstract Background Glow */}
@@ -61,16 +65,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="relative h-[400px] md:h-[600px] flex items-center justify-center"
+          className="relative h-[400px] md:h-[600px] flex items-center justify-center w-full"
         >
-          {/* CSS Orb/Holo representation */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80">
-            <div className="absolute inset-0 rounded-full border border-primary-container/30 border-dashed animate-[spin_20s_linear_infinite]"></div>
-            <div className="absolute inset-4 rounded-full border border-on-tertiary-container/40 border-dotted animate-[spin_15s_linear_infinite_reverse]"></div>
-            <div className="absolute inset-12 rounded-full bg-gradient-to-tr from-primary-container/20 to-tertiary-container/10 backdrop-blur-md border border-primary-container/50 shadow-[0_0_40px_rgba(0,243,255,0.3)] flex items-center justify-center">
-              <Network className="w-16 h-16 text-primary-container opacity-80" />
-            </div>
-          </div>
+          <HeroSplineScene sceneUrl={splineUrl} />
         </motion.div>
       </div>
     </section>
