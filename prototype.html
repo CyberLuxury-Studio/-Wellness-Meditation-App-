@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXUS//CORE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#f5cfff",
+                        "on-primary-fixed-variant": "#004f53",
+                        "inverse-surface": "#e5e1e4",
+                        "on-secondary-fixed-variant": "#92001e",
+                        "secondary-fixed-dim": "#ffb3b2",
+                        "on-primary": "#00373a",
+                        "on-primary-container": "#006b71",
+                        "primary-fixed-dim": "#00dce6",
+                        "error-container": "#93000a",
+                        "primary-container": "#00f3ff",
+                        "tertiary-fixed": "#f8d8ff",
+                        "on-tertiary-fixed-variant": "#74009f",
+                        "on-tertiary-fixed": "#320047",
+                        "surface-variant": "#353437",
+                        "surface-dim": "#131315",
+                        "surface-container": "#201f21",
+                        "inverse-on-surface": "#313032",
+                        "on-background": "#e5e1e4",
+                        "on-surface": "#e5e1e4",
+                        "surface-container-highest": "#353437",
+                        "surface-bright": "#39393b",
+                        "tertiary": "#fff6fc",
+                        "inverse-primary": "#00696f",
+                        "on-tertiary-container": "#9c00d2",
+                        "primary-fixed": "#6ff6ff",
+                        "on-surface-variant": "#b9cacb",
+                        "error": "#ffb4ab",
+                        "background": "#131315",
+                        "on-error": "#690005",
+                        "on-tertiary": "#520071",
+                        "outline-variant": "#3a494b",
+                        "surface-container-lowest": "#0e0e10",
+                        "secondary": "#ffb3b2",
+                        "secondary-container": "#ff525c",
+                        "surface-container-high": "#2a2a2c",
+                        "tertiary-fixed-dim": "#ecb2ff",
+                        "on-secondary": "#680012",
+                        "surface-container-low": "#1c1b1d",
+                        "surface": "#131315",
+                        "on-secondary-container": "#5b000f",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#e3fdff",
+                        "secondary-fixed": "#ffdad8",
+                        "surface-tint": "#00dce6",
+                        "outline": "#849495",
+                        "on-secondary-fixed": "#410008",
+                        "on-primary-fixed": "#002022"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131315]/70 backdrop-blur-[30px] border-b border-cyan-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all duration-300">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="security">security</span>
+<span class="font-headline text-xl font-bold tracking-tighter text-cyan-400">NEXUS//CORE</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label text-sm text-slate-400 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all duration-300 px-3 py-1 rounded" href="#features">FEATURES</a>
+<a class="font-label text-sm text-slate-400 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all duration-300 px-3 py-1 rounded" href="#pricing">PRICING</a>
+<a class="font-label text-sm text-slate-400 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all duration-300 px-3 py-1 rounded" href="#faq">FAQ</a>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-label text-sm font-semibold px-6 py-2 rounded shadow-[0_0_15px_rgba(0,243,255,0.2)] hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-all active:scale-95 uppercase tracking-widest">
+                JOIN BETA
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 overflow-hidden bg-surface-container-lowest">
+<!-- Abstract Background Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-primary-container/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<!-- Left Column: Content -->
+<div class="flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-secondary-container/10 border border-secondary-container/20">
+<span class="w-2 h-2 rounded-full bg-secondary-container shadow-[0_0_8px_rgba(255,82,92,0.8)]"></span>
+<span class="font-label text-xs font-semibold text-secondary-container tracking-widest uppercase">[ STEALTH_BETA_V1.0 ]</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-[-0.02em] leading-[1.1] text-primary">
+                    ENTER THE <br class="hidden md:block"/> NEXT ERA.
+                </h1>
+<p class="font-body text-lg text-on-surface-variant max-w-lg leading-relaxed">
+                    Initiate full neural sync. Upload your consciousness to the secure decentralized network. Zero latency, infinite potential.
+                </p>
+<!-- Terminal Input -->
+<div class="w-full max-w-md mt-4 relative group">
+<div class="absolute inset-0 bg-primary-container/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<form class="flex relative z-10">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-headline text-primary-container opacity-50">&gt;_</span>
+<input class="w-full bg-surface-container-low border-b border-outline-variant/30 text-on-surface font-label text-sm px-10 py-4 focus:outline-none focus:border-primary-container focus:bg-primary-container/5 transition-all rounded-t-sm" placeholder="ENTER_OPERATIVE_EMAIL" required="" type="email"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-surface text-primary-container border border-outline-variant/30 px-4 py-2 text-xs font-headline tracking-widest hover:border-primary-container hover:bg-primary-container/10 hover:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all rounded-sm active:scale-95" type="submit">
+                            EXECUTE
+                        </button>
+</form>
+</div>
+</div>
+<!-- Right Column: Visual -->
+<div class="relative h-[400px] md:h-[600px] flex items-center justify-center">
+<!-- CSS Orb/Holo representation -->
+<div class="relative w-64 h-64 md:w-80 md:h-80">
+<div class="absolute inset-0 rounded-full border border-primary-container/30 border-dashed animate-[spin_20s_linear_infinite]"></div>
+<div class="absolute inset-4 rounded-full border border-on-tertiary-container/40 border-dotted animate-[spin_15s_linear_infinite_reverse]"></div>
+<div class="absolute inset-12 rounded-full bg-gradient-to-tr from-primary-container/20 to-tertiary-container/10 backdrop-blur-md border border-primary-container/50 shadow-[0_0_40px_rgba(0,243,255,0.3)] flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-container opacity-80" data-icon="hub">hub</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-24 px-6 bg-background relative border-t border-outline-variant/10" id="features">
+<div class="max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-3xl md:text-4xl font-bold tracking-tight text-primary mb-4">SYSTEM_CAPABILITIES</h2>
+<div class="w-12 h-1 bg-primary-container rounded"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group relative bg-surface-container-high border border-outline-variant/20 p-8 rounded-sm hover:-translate-y-2 hover:border-primary-container/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,243,255,0.1)]">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-sm pointer-events-none"></div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6 block" data-icon="psychology">psychology</span>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-3">Neural Sync</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Direct bi-directional interface with the core mainframe. Bypass physical input limitations.</p>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-surface-container-high border border-outline-variant/20 p-8 rounded-sm hover:-translate-y-2 hover:border-primary-container/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,243,255,0.1)]">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-sm pointer-events-none"></div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6 block" data-icon="lock">lock</span>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-3">Quantum Encryption</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">State-level cryptographic shielding. Your data stream is unreadable to external entities.</p>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-surface-container-high border border-outline-variant/20 p-8 rounded-sm hover:-translate-y-2 hover:border-primary-container/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,243,255,0.1)]">
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-sm pointer-events-none"></div>
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6 block" data-icon="bolt">bolt</span>
+<h3 class="font-headline text-xl font-semibold text-on-surface mb-3">Zero Latency</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">Sub-millisecond response times across the global mesh network. Immediate action execution.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-[#0e0e10] border-t border-cyan-900/20 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-cyan-400 font-bold font-headline text-lg tracking-tighter">
+            NEXUS//CORE
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-[12px] tracking-widest uppercase text-slate-500 hover:text-pink-500 hover:underline decoration-purple-500 underline-offset-4 transition-colors duration-200" href="#">PROTOCOL</a>
+<a class="font-['Inter'] text-[12px] tracking-widest uppercase text-slate-500 hover:text-pink-500 hover:underline decoration-purple-500 underline-offset-4 transition-colors duration-200" href="#">ENCRYPTION</a>
+<a class="font-['Inter'] text-[12px] tracking-widest uppercase text-slate-500 hover:text-pink-500 hover:underline decoration-purple-500 underline-offset-4 transition-colors duration-200" href="#">LOGS</a>
+<a class="font-['Inter'] text-[12px] tracking-widest uppercase text-slate-500 hover:text-pink-500 hover:underline decoration-purple-500 underline-offset-4 transition-colors duration-200" href="#">SYSTEM STATUS</a>
+</div>
+<div class="font-['Inter'] text-[12px] tracking-widest uppercase text-slate-500">
+            © 2024 NEXUS//CORE. OPERATIVE ACCESS ONLY.
+        </div>
+</footer>
+</body></html>
