@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import HeroSplineScene from "@/components/spline/HeroSplineScene";
+import WaitlistInput from "@/components/ui/WaitlistInput";
 
 interface HeroSectionProps {
   splineUrl?: string;
@@ -37,26 +38,8 @@ export default function HeroSection({ splineUrl }: HeroSectionProps) {
             decentralized network. Zero latency, infinite potential.
           </p>
 
-          {/* Terminal Input */}
-          <div className="w-full max-w-md mt-4 relative group">
-            <div className="absolute inset-0 bg-primary-container/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <form className="flex relative z-10" onSubmit={(e) => e.preventDefault()}>
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 font-headline text-primary-container opacity-50">
-                &gt;_
-              </span>
-              <input
-                className="w-full bg-surface-container-low border-b border-outline-variant/30 text-on-surface font-label text-sm px-10 py-4 focus:outline-none focus:border-primary-container focus:bg-primary-container/5 transition-all rounded-t-sm"
-                placeholder="ENTER_OPERATIVE_EMAIL"
-                required
-                type="email"
-              />
-              <button
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-surface text-primary-container border border-outline-variant/30 px-4 py-2 text-xs font-headline tracking-widest hover:border-primary-container hover:bg-primary-container/10 hover:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all rounded-sm active:scale-95"
-                type="submit"
-              >
-                EXECUTE
-              </button>
-            </form>
+          <div className="w-full max-w-md mt-4">
+             <WaitlistInput />
           </div>
         </motion.div>
 

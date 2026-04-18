@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import WaitlistInput from "@/components/ui/WaitlistInput";
 
 export default function CtaSection() {
   return (
@@ -25,25 +26,9 @@ export default function CtaSection() {
             The next era of human consciousness is here. Secure your position in the stealth beta before access is permanently restricted.
           </p>
 
-          <form className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <div className="relative w-full">
-               <span className="absolute left-4 top-1/2 -translate-y-1/2 font-headline text-primary-container opacity-50">
-                &gt;_
-              </span>
-              <input
-                className="w-full bg-surface-container-low border-b border-outline-variant/30 text-on-surface font-label px-10 py-4 focus:outline-none focus:border-primary-container focus:bg-primary-container/5 transition-all rounded-sm"
-                placeholder="ENTER_OPERATIVE_EMAIL"
-                required
-                type="email"
-              />
-            </div>
-            <button
-              className="w-full sm:w-auto bg-gradient-to-br from-primary to-primary-container text-on-primary-fixed font-headline font-bold px-8 py-4 rounded-sm shadow-[0_0_15px_rgba(0,243,255,0.2)] hover:shadow-[0_0_25px_rgba(0,243,255,0.4)] transition-all active:scale-95 uppercase tracking-widest whitespace-nowrap"
-              type="submit"
-            >
-              EXECUTE
-            </button>
-          </form>
+          <div className="max-w-xl mx-auto">
+             <WaitlistInput buttonText="UPLOAD" />
+          </div>
         </motion.div>
       </div>
     </section>
