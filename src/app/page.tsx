@@ -4,6 +4,10 @@ import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import PricingSection from "@/components/sections/PricingSection";
 import CtaSection from "@/components/sections/CtaSection";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTASection } from "@/components/sections/CTASection";
+
+
 
 export default function Home() {
   // Replace this with the actual Spline URL when provided by the user.
@@ -17,6 +21,8 @@ export default function Home() {
       <FeaturesSection />
       <PricingSection />
       <CtaSection />
+      <FAQSection />
+      <CTASection />
       <Footer />
     </main>
   );
