@@ -1,127 +1,119 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import { Check } from "lucide-react";
+import { motion } from "framer-motion";
+import { Check, Shield, Zap, Trophy } from "lucide-react";
 
 const tiers = [
   {
-    name: "Hacker",
-    price: "$0",
-    description: "Standard access to the decentralized mesh.",
-    features: ["1TB Encrypted Storage", "Basic Neural Sync", "Community Support"],
-    highlighted: false,
+    name: "Rookie",
+    price: "0",
+    description: "Basic mental loadout for casual players.",
+    icon: <Shield className="w-6 h-6 text-slate-400" />,
+    features: [
+      "3 Basic Focus Buffs",
+      "Anti-Tilt Quick Reset",
+      "Standard White Noise",
+    ],
   },
   {
-    name: "Cyber",
-    price: "$49",
-    description: "Unrestricted bandwidth and priority processing.",
-    features: ["Unlimited Storage", "Zero Latency Routing", "Dedicated Operative Node", "Priority Access"],
-    highlighted: true,
+    name: "Esports Pro",
+    price: "15",
+    description: "Advanced routines for ranked grinders.",
+    icon: <Zap className="w-6 h-6 text-cyan-400" />,
+    features: [
+      "All Cognitive Overdrive Tracks",
+      "Custom APM Warmups",
+      "Live Heart-Rate Sync",
+      "Detailed Performance Stats",
+    ],
+    popular: true,
   },
   {
-    name: "God-Mode",
-    price: "Custom",
-    description: "Full architectural control of your sub-net.",
-    features: ["Custom Mainframe Hardware", "Quantum Shielding", "24/7 Elite Support", "Root Access"],
-    highlighted: false,
+    name: "Zen Master",
+    price: "49",
+    description: "God-mode focus for tournament champions.",
+    icon: <Trophy className="w-6 h-6 text-yellow-400" />,
+    features: [
+      "Everything in Pro",
+      "1-on-1 Mental Coaching",
+      "Exclusive Alpha Brainwaves",
+      "Team/Guild Sync",
+    ],
   },
 ];
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
 export default function PricingSection() {
   return (
-    <section className="py-24 px-6 bg-[#0a0a0c] relative" id="pricing">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold tracking-tight text-primary mb-4">
-            ACCESS_TIERS
+    <section className="py-32 bg-[#050505] relative border-t-2 border-white/5" id="pricing">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-24">
+          <span className="text-pink-500 font-mono font-bold tracking-[0.3em] uppercase text-sm mb-4 block">Unlock Ranks</span>
+          <h2 className="text-5xl md:text-7xl font-black mb-6 font-mono uppercase tracking-tighter text-white">
+            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500">Class</span>
           </h2>
-          <div className="w-12 h-1 bg-primary-container rounded mx-auto"></div>
-          <p className="mt-4 text-on-surface-variant font-body">
-            Select your clearance level.
+          <p className="text-xl text-slate-400 font-medium font-mono">
+            Upgrade your mental capacity. No pay-to-win, just pure skill enhancement.
           </p>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center"
-        >
-          {tiers.map((tier) => (
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+          {tiers.map((tier, index) => (
             <motion.div
-              key={tier.name}
-              variants={itemVariants}
-              className={`relative group rounded-sm p-8 transition-all duration-300 ${
-                tier.highlighted
-                  ? "bg-surface-container-high scale-105 shadow-[0_0_40px_rgba(189,0,255,0.15)] z-10"
-                  : "bg-surface border border-outline-variant/20 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(0,243,255,0.05)]"
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1, type: "spring" }}
+              viewport={{ once: true }}
+              whileHover={{ scale: tier.popular ? 1.05 : 1.02 }}
+              className={`rounded-3xl p-10 border-2 font-mono ${
+                tier.popular
+                  ? "bg-black border-cyan-500 relative shadow-[0_0_40px_rgba(6,182,212,0.3)] md:-translate-y-6"
+                  : "bg-black/50 border-white/10 hover:border-white/30"
               }`}
             >
-              {/* Highlight Border */}
-              {tier.highlighted && (
-                <div className="absolute inset-0 rounded-sm p-[1px] bg-gradient-to-b from-primary-container via-purple-500 to-transparent pointer-events-none -z-10">
-                  <div className="absolute inset-0 bg-surface-container-high rounded-sm h-full w-full"></div>
+              {tier.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-1 bg-gradient-to-r from-cyan-400 to-blue-600 text-black text-xs font-black uppercase tracking-[0.2em] rounded-full shadow-lg">
+                  Meta Pick
                 </div>
               )}
-
-              <div className="relative z-10">
-                <h3 className="font-headline text-2xl font-semibold text-on-surface mb-2">
-                  {tier.name}
-                </h3>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="font-headline text-4xl font-bold text-primary">
-                    {tier.price}
-                  </span>
-                  {tier.price !== "Custom" && (
-                    <span className="text-on-surface-variant text-sm">/mo</span>
-                  )}
+              
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`p-3 rounded-xl border border-white/10 ${tier.popular ? 'bg-cyan-500/20' : 'bg-white/5'}`}>
+                  {tier.icon}
                 </div>
-                <p className="font-body text-sm text-on-surface-variant mb-8 border-b border-outline-variant/20 pb-8">
-                  {tier.description}
-                </p>
-
-                <ul className="space-y-4 mb-8">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-on-surface">
-                      <Check className={`w-5 h-5 shrink-0 ${tier.highlighted ? 'text-purple-400' : 'text-primary-container'}`} />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  className={`w-full py-3 px-4 rounded-sm font-headline tracking-widest text-sm transition-all active:scale-95 ${
-                    tier.highlighted
-                      ? "bg-gradient-to-r from-purple-600 to-primary-container text-background font-bold shadow-[0_0_20px_rgba(0,243,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.5)]"
-                      : "bg-surface-container-low text-primary-container border border-outline-variant/30 hover:border-primary-container hover:bg-primary-container/10"
-                  }`}
-                >
-                  {tier.highlighted ? "INITIALIZE" : "SELECT_PLAN"}
-                </button>
+                <h3 className="text-3xl font-black uppercase text-white">{tier.name}</h3>
               </div>
+              
+              <p className="text-slate-400 text-sm mb-8 min-h-[40px] font-medium">{tier.description}</p>
+              
+              <div className="mb-10">
+                <span className="text-6xl font-black text-white">${tier.price}</span>
+                <span className="text-slate-500 font-bold text-xl">/mo</span>
+              </div>
+
+              <ul className="space-y-4 mb-10">
+                {tier.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <Check className={`w-5 h-5 ${tier.popular ? "text-cyan-400" : "text-slate-500"}`} />
+                    <span className="text-slate-300 font-medium">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <motion.button 
+                whileTap={{ scale: 0.95 }}
+                className={`w-full py-5 rounded-xl font-black uppercase tracking-[0.2em] text-sm transition-all border-2 ${
+                tier.popular
+                  ? "bg-cyan-500 text-black border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]"
+                  : "bg-transparent text-white border-white/20 hover:bg-white/10"
+              }`}>
+                Equip Loadout
+              </motion.button>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
